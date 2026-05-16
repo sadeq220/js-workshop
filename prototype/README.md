@@ -1,8 +1,8 @@
 ### Prototype chain and Inheritance
-Js Prototypal model    
+JS Prototypal model    
 Prototypes are the mechanism by which JavaScript objects inherit features from one another.   
 In JS methods are defined in the `prototype object of the constructor`.    
- 
+
 > Every object in JavaScript has a built-in property, which is called its prototype.    
 > The prototype is itself an object, so the prototype will have its own prototype, making what's called a prototype chain.    
 > The chain ends when we reach a prototype that has null for its own prototype.
@@ -12,7 +12,7 @@ In JS methods are defined in the `prototype object of the constructor`.
 
  ### Setting a prototype
  1. use `Object.create()`
- 2. use constructor function prototype property `function.prototype` 
+ 2. use constructor function prototype property `function.prototype`   
  In JavaScript, all functions have a property named prototype.    
  When you call a function as a constructor, this property is set as the prototype of the newly constructed object (by convention, in the property named __proto__).
 
