@@ -26,5 +26,4 @@ function Student(name, level) {
 }
 Object.assign(Student.prototype, studentPrototype);
 
-export default Person;
-export {Student};
+export {Student, Person};
