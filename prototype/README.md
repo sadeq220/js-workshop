@@ -1,7 +1,17 @@
 ### Prototype chain and Inheritance
-JS Prototypal model    
+JS Prototypal inheritance model    
 Prototypes are the mechanism by which JavaScript objects inherit features from one another.   
-In JS methods are defined in the `prototype object of the constructor`.    
+In JavaScript, objects have a special hidden property `[[Prototype]]` (as named in the specification), that is either null or references another object. That object is called “a prototype”.     
+When we read a property from object, and it’s missing, JavaScript automatically takes it from the prototype.    
+> [!NOTE]   
+> Please note that __proto__ is not the same as the internal [[Prototype]] property. It’s a getter/setter for [[Prototype]]    
+> The __proto__ property is a bit outdated. It exists for historical reasons, modern JavaScript suggests that we should use Object.getPrototypeOf/Object.setPrototypeOf functions instead that get/set the prototype    
+
+Normally last prototype object(that every JS obj inherit from), is `Object.prototype`    
+for example, literal objects' {...} prototype is *Object.prototype*   
+or *function.prototype* is an empty object with [[Prototype]] of *Object.prototype*    
+
+In class instances, methods are defined in the `prototype object of the constructor`.    
 
 > Every object in JavaScript has a built-in property, which is called its prototype.    
 > The prototype is itself an object, so the prototype will have its own prototype, making what's called a prototype chain.    
@@ -15,8 +25,8 @@ In JS methods are defined in the `prototype object of the constructor`.
  2. use constructor function prototype property `function.prototype`   
  In JavaScript, all functions have a property named prototype.    
  When you call a function as a constructor, this property is set as the prototype of the newly constructed object (by convention, in the property named __proto__).
-3. use `Object.assign(Object.getPrototypeOf(literalobject), prototypeObj)`    
-Literal objects{} prototype can be found with *Object.getPrototypeOf()* function
+3. use `Object.setPrototypeOf(obj, proto)`    
+JS objects prototype can be found with *Object.getPrototypeOf()* function, and it can be set with *Object.setPrototypeOf(obj, proto)*
 
 ### class-based/Classical OOP
 differences between JS features and the "classical" OOP concepts    
@@ -32,5 +42,6 @@ JS classes under the hood, still use prototypes.
 Private fields must be declared in the class declaration, and their names start with #.    
 
 ### References
-- [mozilla JS prototype](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object_prototypes)
-- [mozilla JS class](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript)
+- [MDN JS prototype](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object_prototypes)
+- [MDN JS class](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript)
+- [javascript.info prototype](https://javascript.info/prototype-inheritance)
