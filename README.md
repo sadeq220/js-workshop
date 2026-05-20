@@ -7,15 +7,20 @@ Each concept directory contains:
 - `package.json` - With a `start` script to run the examples
 - `.js` files - Practical code examples using ES modules
 
-## 🚀 Prerequisites
-
 ### Install Node.js (LTS/Jod)
 
 This workshop uses ES modules and modern JavaScript features available in Node.js LTS (Jod). If you don't have Node.js installed, use `nvm` (Node Version Manager):    
 
-**Install nvm (recommended):** visit [nvm github](https://github.com/nvm-sh/nvm)   
+**Install nvm (recommended)**: visit [nvm github](https://github.com/nvm-sh/nvm)   
 **Install nodejs lts/jod**: `nvm install lts/jod`   
 **import nodejs executables to your current shell**: `nvm use lts/jod`    
+
+For example, running *prototype* concept code:   
+```bash
+cd prototype
+nvm use lts/jod
+npm start
+```
 
 ###  ES Modules (ESM) Explanation
 This workshop uses ES Modules (ESM) - the standard JavaScript module system. Here's what you need to know:   
@@ -56,13 +61,6 @@ helperFunction();
 const instance = new MainClass();
 ```
 
-For example, running *prototype* concept code:   
-```bash
-cd prototype
-nvm use lts/jod
-npm start
-```
-
 ### Strict Mode
 Strict mode is automatically enabled in ES modules. You don't need to add 'use strict'; at the top of your files.
 
@@ -72,7 +70,7 @@ Prevents common JavaScript pitfalls:
 - Cannot delete variables, functions, or arguments
 - Duplicate parameter names not allowed
 - `with` statements not allowed
-- `this` is `undefined` in functions (not the global object)
+- Cleaner `this`: In a regular function, `this` is undefined rather than the global object.
 
 Benefits:
 - Catches common coding mistakes as errors
