@@ -1,5 +1,7 @@
 import init from "./scope.mjs";
-import { buildUri } from "./closure.mjs";
+import { buildUri } from "./buildUriClosure.mjs";
+import UriBuilder from "./buildUriClass.mjs";
+
 
 const githubUriBuilder = buildUri('api.github.com');
 /**
@@ -10,5 +12,14 @@ const githubUriBuilder = buildUri('api.github.com');
  */
 const githubUsersUri = githubUriBuilder('users/octocat');
 const githubGistUri = githubUriBuilder('/gist');
-console.log(`github users uri: ${githubUsersUri}`);
-console.log(`github gist uri: ${githubGistUri}`)
+console.log(`closure: github users uri: ${githubUsersUri}`);
+console.log(`closure: github gist uri: ${githubGistUri}`);
+
+/**
+ * UriBuilder class is equivalant class structure of buildUriClosure
+ */
+const githubUriBuilderClassInstance = new UriBuilder('api.github.com');
+console.log(`class instance: github users uri
+     ${githubUriBuilderClassInstance.buildPath('users/octocat')}`);
+console.log(`class instance: github gist uri
+    ${githubUriBuilderClassInstance.buildPath('gist')}`);

@@ -3,7 +3,7 @@ JavaScript is a very function-oriented language. you can pass a function as an a
 
 To imitate OOP languages[^1] objects(behavior+state), JS introduced inner functions(nested functions) with `lexical scope`.   
 
-**functions in JavaScript form closures**
+**Functions in JavaScript form closures**   
 A closure is the combination of a function and the lexical environment within which that function was declared. This environment consists of any variables that were in-scope at the time the closure was created.
 
 ### what is scope?
@@ -24,8 +24,15 @@ const initFunction = init();
 console.log(initFunction());
 ```
 ### what is lexical?
-Lexical refers to the definition of things.
+Lexical refers to the definition of things.    
+Another name for a dictionary is a lexicon. In other words, a lexicon is a dictionary where words are listed and defined.   
 
+### Lexical Scope
+Lexical scope is the definition area of an expression.    
+In other words, an item's lexical scope is the place in which the item got created.     
+In simple terms, lexical scope is the scope of a variable or function    
+determined at compile time by its physical location in the sourcecode.     
+Unlike dynamic scope, which depends on how functions are called at runtime.
 
 ## References
 - [javascript.info closure](https://javascript.info/closure)
