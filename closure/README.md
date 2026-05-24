@@ -34,6 +34,22 @@ In simple terms, lexical scope is the scope of a variable or function
 determined at compile time by its physical location in the sourcecode.     
 Unlike dynamic scope, which depends on how functions are called at runtime.
 
+### Practical example
+Much of the code written in front-end JavaScript is event-based.    
+You define some behavior, and then attach it to an event that is triggered by the user (such as a click or a keypress).     
+The code is attached as a callback (a single function that is executed in response to the event).
+```Javascript
+function makeSizer(size) {
+  return () => {
+    document.body.style.fontSize = `${size}px`;
+  };
+}
+
+document.getElementById("size-12").onclick = makeSizer(12);
+document.getElementById("size-14").onclick = makeSizer(14);
+document.getElementById("size-16").onclick = makeSizer(16);
+```
+
 ## References
 - [javascript.info closure](https://javascript.info/closure)
 - [MDN closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures)
