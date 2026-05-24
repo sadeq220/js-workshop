@@ -1,7 +1,7 @@
 ## JS Function Closures
 JavaScript is a very function-oriented language. you can pass a function as an argument or return it as a result.
 
-To imitate OOP languages[^1] objects(behavior+state), JS introduced inner functions(nested functions) with `lexical scope`.   
+To imitate OOP languages[^1] objects(behavior+state), JS introduced inner functions(nested functions) with reference to its `lexical environment`.   
 
 **Functions in JavaScript form closures**   
 A closure is the combination of a function and the lexical environment within which that function was declared. This environment consists of any variables that were in-scope at the time the closure was created.
@@ -32,7 +32,17 @@ Lexical scope is the definition area of an expression.
 In other words, an item's lexical scope is the place in which the item got created.     
 In simple terms, lexical scope is the scope of a variable or function    
 determined at compile time by its physical location in the sourcecode.     
-Unlike dynamic scope, which depends on how functions are called at runtime.
+Unlike dynamic scope, which depends on how functions are called at runtime.   
+
+Variables and functions have different levels of scope:    
+- Global Scope
+    - Variables defined outside any function or block, accessible anywhere in the program.
+- Local Scope 
+    - Variables defined inside a function or block, accessible only within that specific function or block.
+- Nested Scope 
+    - Inner functions have access to variables in their parent functions.
+- Block Scope
+    - Variables defined with let and const are limited to the block they are declared in, like loops or conditionals.
 
 ### Practical example
 Much of the code written in front-end JavaScript is event-based.    
