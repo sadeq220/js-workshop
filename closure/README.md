@@ -60,9 +60,30 @@ document.getElementById("size-14").onclick = makeSizer(14);
 document.getElementById("size-16").onclick = makeSizer(16);
 ```
 
+### Lexical Environment, in-depth examination from javascript.info 
+In JavaScript, each scope[^2] has an internal (hidden) associated object known as the `Lexical Environment`.    
+The Lexical Environment object consists of two parts:
+- Environment Record
+    - stores all local variables as its properties (and some other information like the value of this).
+- A reference to outer lexical environment  
+
+When a Lexical Environment is created, a Function Declaration immediately becomes a ready-to-use function (unlike let, that is unusable till the declaration).    
+Naturally, this behavior only applies to Function Declarations, not Function Expressions where we assign a function to a variable, such as let say = function(name)....
+
+![lexical env](./resources/lexical_env.svg)   
+When a function runs, at the beginning of the call, a new Lexical Environment is created automatically to store local variables and parameters of the call.    
+All functions remember the Lexical Environment in which they were made.    
+Technically, there’s no magic here: all functions have the hidden property named [[Environment]], that keeps the reference to the Lexical Environment where the function was created:    
+![function lexical env](./resources/fun_lexical_env.svg)   
+
+A closure is a function that remembers its outer variables and can access them.    
+In JavaScript, all functions are naturally closures(except for constructor function)    
+ 
+
 ## References
 - [javascript.info closure](https://javascript.info/closure)
 - [MDN closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures)
 - [freecodecamp lexical scope](https://www.freecodecamp.org/news/javascript-lexical-scope-tutorial/)
 
 [^1]: Object Oriented Programming refers to modeling everything as an object, each object has its own state(its instance variables) and behavior(its methods), OOP is all about modularity,  prominent OOP languages are Smalltalk, C/C++, Java 
+[^2]: every running function, code block {...}, and the script as a whole
