@@ -32,6 +32,9 @@ and any variable can be assigned (and re-assigned) values of all types.
 Weak Typing:   
 It allows implicit type conversion when an operation involves mismatched types, instead of throwing type errors.    
 
+Type coercion:    
+Type coercion is the automatic or implicit conversion of values from one data type to another (such as strings to numbers).     
+
 
 ## Object
 In JS objects, are just `associative array`(key-value store, `Map`)   
@@ -45,3 +48,4 @@ JS have two types of objects:
 - [MDN data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures)
 - [MDN primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
 - [javascript.info type conversion](https://javascript.info/type-conversions)
+- [MDN Type Coercion](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion)
